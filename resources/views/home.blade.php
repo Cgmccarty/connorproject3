@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card row no-gutters">
-                <div class="row no-gutters">
+                <div class="row">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -13,9 +13,8 @@
                     @endif
                 </div>
                 <button class="btn" style="background-color: lightblue;">
-                    <a href="/posts/create">Submit new post</a>
+                    <a href="/posts">View Feed</a>
                 </button>
-                <div class="card-header justify-content-center row no-gutters"><a href="/posts">View Feed</a></div>
             </div>
         </div>
     </div>

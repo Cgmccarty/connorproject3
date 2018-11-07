@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = \App\Post::get();
+        $posts = \App\Post::orderBy('updated_at', 'desc')->get();
         $users = \App\User::get();
         return view('posts.index', compact('posts', 'users'));
     }
@@ -91,8 +91,17 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $post = \App\Post::find($id);
+        $post->delete();
+
+        $request->session()->flash('status', "Your post was deleted!");
+        return redirect('/posts');
+    }
+
+    public function confirmDelete($id) {
+        $post = \App\Post::find($id);
+        return view('posts.delete', compact('post'));
     }
 }

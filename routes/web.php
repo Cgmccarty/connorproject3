@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'PostController')->middleware('auth');
+Route::get('/posts/{id}/delete', 'PostController@confirmDelete')->middleware('auth');

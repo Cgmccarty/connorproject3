@@ -49,7 +49,7 @@ class PostsTableSeeder extends Seeder
         $posts = [
             'Glass House sucks',
             'This is my favorite website.',
-            'GOTTA LOVE THIS PROFESSIONAL DEISGN AND SMOOTH UI.'
+            'GOTTA LOVE THIS PROFESSIONAL DESIGN AND SMOOTH UI.'
         ];
 
         foreach ($posts as $post) {
