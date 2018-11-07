@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -12,12 +13,17 @@
                         </div>
                     @endif
                 </div>
-                <button class="btn" style="background-color: lightblue;">
-                    <a href="/posts/create">Submit new post</a>
-                </button>
-                <div class="card-header justify-content-center row no-gutters"><a href="/posts">View Feed</a></div>
+                <a href="/posts/create" class="text-secondary btn" style="background-color: lightblue;">Create new post</a>
+                @foreach ($posts as $post)
+                    <div class="card-header">
+                        <h5>{{ $post->user->name }}</h5>
+                    </div>
+                    <a class="p-2 text-right" href="/posts/{{ $post->id }}/edit">Edit</a>
+                    <div class="card-body justify-content-center row no-gutters border-bottom">{{ $post->post }}</div>
+                @endforeach
             </div>
         </div>
     </div>
 </div>
+
 @endsection

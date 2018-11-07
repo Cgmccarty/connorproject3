@@ -19,7 +19,7 @@ class PostsTableSeeder extends Seeder
         $user->password = bcrypt('connor');
         $user->save();
 
-        // Get's user ID for seeding
+        // Gets user ID for seeding
         $connor = \App\User::where('name', 'Connor')->first();
 
         // Post model
@@ -33,6 +33,29 @@ class PostsTableSeeder extends Seeder
             $item = new \App\Post;
             $item->post = $post;
             $item->user_id = $connor->id;
+            $item->save();
+        }
+
+        // Make users
+        $user = new \App\User;
+        $user->name = 'Galen';
+        $user->email = "classclowngm@gmail.com";
+        $user->password = bcrypt('galen');
+        $user->save();
+
+        $galen = \App\User::where('name', 'Galen')->first();
+
+        // Post model
+        $posts = [
+            'Glass House sucks',
+            'This is my favorite website.',
+            'GOTTA LOVE THIS PROFESSIONAL DEISGN AND SMOOTH UI.'
+        ];
+
+        foreach ($posts as $post) {
+            $item = new \App\Post;
+            $item->post = $post;
+            $item->user_id = $galen->id;
             $item->save();
         }
     }
