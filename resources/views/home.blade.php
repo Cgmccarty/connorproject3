@@ -17,7 +17,7 @@
                         </div>
                     @endif
                 </div>
-                <a href="/posts" class="btn">View Feed</a>
+                <a href="/posts" class="btn" style="background-color: lightblue;">View Feed</a>
             </div>
         </div>
     </div>
