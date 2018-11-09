@@ -17,9 +17,7 @@
                         </div>
                     @endif
                 </div>
-                <button class="btn" style="background-color: lightblue;">
-                    <a href="/posts" class="btn btn-fluid">View Feed</a>
-                </button>
+                <a href="/posts" class="btn">View Feed</a>
             </div>
         </div>
     </div>
